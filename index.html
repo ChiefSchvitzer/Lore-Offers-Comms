@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lore Bathing Club — Weekend Marketing Plan</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #f7f6f3;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .page-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0ded8;
+  }
+  .page-header h1 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+  }
+  .page-header p {
+    font-size: 13px;
+    color: #888;
+  }
+
+  /* Section labels */
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #999;
+    margin: 2.5rem 0 12px;
+  }
+
+  /* Tables */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e8e6e0;
+  }
+  .data-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #999;
+    padding: 10px 14px;
+    border-bottom: 1px solid #e8e6e0;
+    background: #faf9f7;
+  }
+  .data-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f0eee9;
+    vertical-align: top;
+    color: #1a1a1a;
+    line-height: 1.5;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: #faf9f7; }
+
+  /* Tags */
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .tag-active    { background: #e8f5e9; color: #2e7d32; }
+  .tag-idea      { background: #e3f0fb; color: #1565c0; }
+  .tag-future    { background: #f0ede8; color: #666; }
+  .tag-rec       { background: #e8f5e9; color: #2e7d32; }
+  .tag-hot       { background: #fdecea; color: #b71c1c; }
+  .tag-promo     { background: #fff8e1; color: #e65100; }
+
+  /* Price */
+  .price { font-size: 15px; font-weight: 600; }
+  .price-note { font-size: 12px; color: #999; }
+
+  /* Entry badge */
+  .entry-badge {
+    display: inline-block;
+    background: #ede9fb;
+    color: #4527a0;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 2px 9px;
+    white-space: nowrap;
+  }
+
+  /* Day blocks for distribution plan */
+  .day-block {
+    background: #fff;
+    border: 1px solid #e8e6e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .day-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e8e6e0;
+    background: #faf9f7;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .day-name { font-size: 14px; font-weight: 600; }
+  .day-sub  { font-size: 12px; color: #888; }
+  .channel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (max-width: 600px) {
+    .channel-grid { grid-template-columns: 1fr; }
+    .channel-col:not(:last-child) { border-right: none !important; border-bottom: 1px solid #f0eee9; }
+  }
+  .channel-col { padding: 14px 16px; }
+  .channel-col:not(:last-child) { border-right: 1px solid #f0eee9; }
+  .channel-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .ch-email  { color: #1565c0; }
+  .ch-sms    { color: #2e7d32; }
+  .ch-social { color: #e65100; }
+  .channel-item {
+    font-size: 12px;
+    color: #333;
+    line-height: 1.5;
+    padding: 6px 0;
+    border-bottom: 1px solid #f5f3ef;
+  }
+  .channel-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .channel-item strong {
+    display: block;
+    font-size: 11px;
+    color: #999;
+    font-weight: 500;
+    margin-bottom: 1px;
+  }
+
+  /* Urgency cards */
+  .urgency-card {
+    background: #fff;
+    border: 1px solid #e8e6e0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .urgency-card.rec { border-left: 3px solid #4caf50; }
+  .urgency-card.idea { border-left: 3px solid #90caf9; }
+  .urgency-title { font-size: 14px; font-weight: 600; margin: 6px 0 5px; }
+  .urgency-body { font-size: 13px; color: #555; line-height: 1.6; }
+
+  /* Giveaway box */
+  .giveaway-box {
+    background: #fff;
+    border: 1px solid #e8e6e0;
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .giveaway-meta { font-size: 12px; color: #888; margin-bottom: 14px; }
+
+  /* Segment summary cards */
+  .seg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 600px) { .seg-grid { grid-template-columns: 1fr; } }
+  .seg-card {
+    background: #fff;
+    border: 1px solid #e8e6e0;
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .seg-card.priority { border-color: #b0bec5; border-width: 1.5px; }
+  .seg-card-label { font-size: 11px; color: #999; font-weight: 500; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .seg-card-title { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+  .seg-card-desc { font-size: 12px; color: #888; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="page-header">
+    <h1>Lore Bathing Club — Weekend Marketing Plan</h1>
+    <p>May 2026 &nbsp;·&nbsp; 676 Broadway, NoHo &nbsp;·&nbsp; Internal use only</p>
+  </div>
+
+  <!-- SEGMENTS -->
+  <div class="section-label">Customer segments</div>
+  <div class="seg-grid">
+    <div class="seg-card">
+      <div class="seg-card-label">Segment 01</div>
+      <div class="seg-card-title">Members</div>
+      <div class="seg-card-desc">Monthly &amp; annual subscribers — $149–$250/month. Guest passes free through this weekend, then $35.</div>
+    </div>
+    <div class="seg-card">
+      <div class="seg-card-label">Segment 02</div>
+      <div class="seg-card-title">Active credit holders</div>
+      <div class="seg-card-desc">Anyone holding unused sessions — single ($55), 3-pack ($149), 2-for-1 ($55), 3-for-2 ($100).</div>
+    </div>
+    <div class="seg-card priority">
+      <div class="seg-card-label">Segment 03 — highest priority</div>
+      <div class="seg-card-title">Lapsed buyers</div>
+      <div class="seg-card-desc">Previously purchased, zero credits remaining. They know the product. Easiest to reactivate.</div>
+    </div>
+    <div class="seg-card">
+      <div class="seg-card-label">Segment 04</div>
+      <div class="seg-card-title">Cold leads</div>
+      <div class="seg-card-desc">Never purchased — guests, email signups, inquiries. Have their contact info, haven't committed.</div>
+    </div>
+  </div>
+
+  <!-- DISTRIBUTION PLAN -->
+  <div class="section-label">Distribution plan — Friday through follow-up</div>
+
+  <div class="day-block">
+    <div class="day-header">
+      <div class="day-name">Friday</div>
+      <div class="day-sub">Launch everything. First send by 12pm, second wave at 6pm.</div>
+    </div>
+    <div class="channel-grid">
+      <div class="channel-col">
+        <div class="channel-label ch-email">&#9993; Email</div>
+        <div class="channel-item"><strong>Members</strong>Free guest passes end Sunday — last chance. Giveaway announcement embedded.</div>
+        <div class="channel-item"><strong>Credit holders</strong>Use your session this weekend, earn a giveaway entry. Reload CTA at the bottom.</div>
+        <div class="channel-item"><strong>Lapsed buyers</strong>"You ran out. We noticed." Welcome back 3-pack offer + giveaway hook.</div>
+        <div class="channel-item"><strong>Cold leads</strong>First session $35 this weekend only. Giveaway framing optional.</div>
+      </div>
+      <div class="channel-col">
+        <div class="channel-label ch-sms">&#9742; SMS</div>
+        <div class="channel-item"><strong>Members</strong>"Free guest passes end Sunday. Bring someone this weekend." + booking link.</div>
+        <div class="channel-item"><strong>Lapsed buyers</strong>"Come back this weekend — $129 for 3 sessions, this weekend only." + link.</div>
+        <div class="channel-item"><strong>Cold leads</strong>"$35 first session at Lore this weekend. 676 Broadway." + link. Max 2 sentences.</div>
+      </div>
+      <div class="channel-col">
+        <div class="channel-label ch-social">&#9679; Social</div>
+        <div class="channel-item"><strong>Feed post</strong>Giveaway announcement — "We're giving away a full year at Lore." Entry mechanic in caption.</div>
+        <div class="channel-item"><strong>Stories</strong>Swipe-up to book. Reinforce free guest pass deadline for members.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-header">
+      <div class="day-name">Saturday</div>
+      <div class="day-sub">Urgency + in-the-room content. Let the space do the selling.</div>
+    </div>
+    <div class="channel-grid">
+      <div class="channel-col">
+        <div class="channel-label ch-email">&#9993; Email</div>
+        <div class="channel-item"><strong>Credit holders who haven't booked</strong>"Still haven't used your session? Tomorrow is the last day to earn a giveaway entry this weekend."</div>
+        <div class="channel-item"><strong>Cold leads / lapsed</strong>No new sends — Friday email is enough. Don't pile on.</div>
+      </div>
+      <div class="channel-col">
+        <div class="channel-label ch-sms">&#9742; SMS</div>
+        <div class="channel-item"><strong>All segments</strong>No new blasts Saturday. Risks feeling spammy after Friday send. Save for Sunday morning.</div>
+      </div>
+      <div class="channel-col">
+        <div class="channel-label ch-social">&#9679; Social</div>
+        <div class="channel-item"><strong>In-room stories</strong>Candid content — the space, the circuit, cold plunge. Atmosphere over advertising.</div>
+        <div class="channel-item"><strong>Repost tagged content</strong>Anyone who tags Lore, repost immediately. Social proof in real time.</div>
+        <div class="channel-item"><strong>Story poll</strong>"Hot or cold — which are you?" Low-effort engagement, increases story reach.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-header">
+      <div class="day-name">Sunday</div>
+      <div class="day-sub">Last call. Send at 9am — before people make other plans.</div>
+    </div>
+    <div class="channel-grid">
+      <div class="channel-col">
+        <div class="channel-label ch-email">&#9993; Email</div>
+        <div class="channel-item"><strong>Members</strong>"Today is the last day for free guest passes." Single focus, one CTA.</div>
+        <div class="channel-item"><strong>Cold leads</strong>"$35 first session — today only." Expires tonight.</div>
+        <div class="channel-item"><strong>Lapsed who didn't convert</strong>Final nudge. No new offer — urgency only.</div>
+      </div>
+      <div class="channel-col">
+        <div class="channel-label ch-sms">&#9742; SMS</div>
+        <div class="channel-item"><strong>All segments</strong>One short send at 9–10am. "[Offer]. Book now." Highest-converting send of the weekend — people are awake and making plans.</div>
+      </div>
+      <div class="channel-col">
+        <div class="channel-label ch-social">&#9679; Social</div>
+        <div class="channel-item"><strong>Morning story</strong>"Last day for [offer]." Clean, direct. Link to book.</div>
+        <div class="channel-item"><strong>In-room content</strong>Same as Saturday — atmosphere and real moments.</div>
+        <div class="channel-item"><strong>Evening wrap</strong>"See you next time." Warm close. Sets up Monday follow-up energy.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-header">
+      <div class="day-name">Monday — Tuesday</div>
+      <div class="day-sub">Follow up while intent is warm. Target by what people did this weekend.</div>
+    </div>
+    <div class="channel-grid">
+      <div class="channel-col">
+        <div class="channel-label ch-email">&#9993; Email</div>
+        <div class="channel-item"><strong>Guests who came</strong>"You came. Now make it a habit." $35 intro or 3-pack at $129, 48 hours only.</div>
+        <div class="channel-item"><strong>Weekend attenders</strong>"How'd it feel?" Reload nudge + giveaway reminder. Membership math if 2+ visits.</div>
+        <div class="channel-item"><strong>Lapsed who didn't return</strong>One soft follow-up. Giveaway reminder only — no new discount. Then go quiet a week.</div>
+        <div class="channel-item"><strong>Cold leads who didn't convert</strong>48-hour extension on $35 offer. "We're giving you until Tuesday."</div>
+      </div>
+      <div class="channel-col">
+        <div class="channel-label ch-sms">&#9742; SMS</div>
+        <div class="channel-item"><strong>Guests who came</strong>Monday only. "Glad you made it in. First solo session $35 through tomorrow."</div>
+        <div class="channel-item"><strong>Non-converters</strong>No SMS. Email is enough. SMS to cold non-responders damages deliverability.</div>
+      </div>
+      <div class="channel-col">
+        <div class="channel-label ch-social">&#9679; Social</div>
+        <div class="channel-item"><strong>Monday feed</strong>Weekend recap or strong visual. Tag any partners or guests (with permission).</div>
+        <div class="channel-item"><strong>Mid-week story</strong>"Still time to earn entries — every session counts." Keeps the giveaway alive.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="section-label">Current pricing — baseline</div>
+  <table class="data-table">
+    <thead><tr><th>Product</th><th>Price</th><th>Who</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Single session</td><td><span class="price">$55</span></td><td>General public</td><td>Standard rate, any time</td></tr>
+      <tr><td>Off-peak session</td><td><span class="price">$25</span></td><td>General public</td><td>Weekdays only</td></tr>
+      <tr><td>Weekend session</td><td><span class="price">$25</span></td><td>Members only</td><td>Member benefit; non-members pay $55</td></tr>
+      <tr><td>Monthly membership</td><td><span class="price">$149–$250</span><span class="price-note">/mo</span></td><td>Members</td><td>Tier varies; includes $25 weekend sessions</td></tr>
+    </tbody>
+  </table>
+
+  <!-- CREDIT PACKS -->
+  <div class="section-label">Existing credit packs — already in market</div>
+  <table class="data-table">
+    <thead><tr><th>Pack</th><th>Price</th><th>Per session</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>3-pack</td><td><span class="price">$149</span></td><td class="price-note">$49.67</td><td><span class="tag tag-active">Active</span></td></tr>
+      <tr><td>2-for-1</td><td><span class="price">$55</span></td><td class="price-note">$27.50</td><td><span class="tag tag-active">Active</span> &nbsp; Best performing promo</td></tr>
+      <tr><td>3-for-2</td><td><span class="price">$100</span></td><td class="price-note">$33.33</td><td><span class="tag tag-active">Active</span></td></tr>
+    </tbody>
+  </table>
+
+  <!-- GUEST PASSES -->
+  <div class="section-label">Guest pass offers</div>
+  <table class="data-table">
+    <thead><tr><th>Offer</th><th>Price</th><th>Who</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Member guest pass — this weekend</td><td><span class="price">Free</span></td><td>Members only</td><td><span class="tag tag-active">Live now</span> &nbsp; Expires Sunday</td></tr>
+      <tr><td>Member guest pass — standard</td><td><span class="price">$35</span></td><td>Members only</td><td>Goes live Monday</td></tr>
+      <tr><td>Member guest pass bundle</td><td><span class="price">$25</span> <span class="price-note">each</span></td><td>Members only</td><td><span class="tag tag-idea">Idea</span> &nbsp; Buy 4 for $100 — turns membership into a hosting tool</td></tr>
+      <tr><td>Guest-to-member referral credit</td><td><span class="price">$20 credit</span></td><td>Members who refer</td><td><span class="tag tag-idea">Idea</span> &nbsp; $20 off renewal when referred guest converts to membership</td></tr>
+      <tr><td>Gifted session pass</td><td><span class="price">$55</span></td><td>Anyone</td><td><span class="tag tag-idea">Idea</span> &nbsp; Buy a session as a gift — recipient books independently</td></tr>
+      <tr><td>Gift 3-pack</td><td><span class="price">$149</span></td><td>Anyone</td><td><span class="tag tag-idea">Idea</span> &nbsp; 3 gifted sessions; good for birthdays and wellness gifts</td></tr>
+      <tr><td>Duo session pass</td><td><span class="price">$90</span></td><td>Anyone</td><td><span class="tag tag-idea">Idea</span> &nbsp; Two sessions meant to be used at the same time</td></tr>
+      <tr><td>Group rate (4+ people)</td><td><span class="price">$40</span> <span class="price-note">each</span></td><td>Walk-in groups</td><td><span class="tag tag-idea">Idea</span> &nbsp; $40/head for groups of 4+ booking together</td></tr>
+      <tr><td>Birthday pass</td><td><span class="price">Free or $25</span></td><td>Anyone on their birthday</td><td><span class="tag tag-idea">Idea</span> &nbsp; Must book in advance; high shareability</td></tr>
+      <tr><td>Partner brand guest pass</td><td><span class="price">$35</span></td><td>Partner brand customers</td><td><span class="tag tag-idea">Idea</span> &nbsp; Pass code via ON Running, Humanrace, etc.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- WEEKEND OFFERS -->
+  <div class="section-label">Weekend-specific offers</div>
+  <table class="data-table">
+    <thead><tr><th>Offer</th><th>Price</th><th>Who</th><th>Mechanic</th></tr></thead>
+    <tbody>
+      <tr><td>First session intro rate</td><td><span class="price">$35</span></td><td>Cold leads</td><td>One-time, expires Sunday</td></tr>
+      <tr><td>Welcome back 3-pack</td><td><span class="price">$129</span></td><td>Lapsed buyers</td><td>$20 off standard 3-pack — one-time re-entry offer</td></tr>
+      <tr><td>48-hour cold lead extension</td><td><span class="price">$35</span></td><td>Cold leads who didn't convert</td><td>Extend intro rate through Tuesday</td></tr>
+    </tbody>
+  </table>
+
+  <!-- URGENCY MECHANICS -->
+  <div class="section-label">How to ensure discounted sessions are used this weekend</div>
+
+  <div class="urgency-card rec">
+    <span class="tag tag-rec">Recommended</span>
+    <div class="urgency-title">Buy and book simultaneously</div>
+    <div class="urgency-body">Don't issue a floating credit — require customers to select a specific time slot at the point of purchase. The discount is tied to the reservation, not a redeemable credit. No slot selected, no discount unlocked. The message writes itself: "Choose your session time to lock in this price."</div>
+  </div>
+
+  <div class="urgency-card rec">
+    <span class="tag tag-rec">Recommended</span>
+    <div class="urgency-title">Hard expiry at Sunday midnight</div>
+    <div class="urgency-body">Any discounted session credit purchased this weekend expires Sunday at midnight. Make this front and center in the offer — not buried in fine print. The threat of losing the deal is a stronger motivator than the deal itself.</div>
+  </div>
+
+  <div class="urgency-card idea">
+    <span class="tag tag-idea">Idea</span>
+    <div class="urgency-title">48-hour expiry from time of purchase</div>
+    <div class="urgency-body">Credit expires 48 hours from when it was bought. Naturally compresses usage into the weekend without a fixed date per customer. Slightly harder to administer but feels more dynamic.</div>
+  </div>
+
+  <div class="urgency-card idea">
+    <span class="tag tag-idea">Idea</span>
+    <div class="urgency-title">Limited slots, not limited time</div>
+    <div class="urgency-body">Cap the offer at a specific number of redemptions — "only 20 spots at this price this weekend." Scarcity of supply drives action faster than scarcity of time. Works especially well in an SMS or email subject line.</div>
+  </div>
+
+  <div class="urgency-card idea">
+    <span class="tag tag-idea">Idea</span>
+    <div class="urgency-title">Flash purchase window</div>
+    <div class="urgency-body">The offer is only purchasable within a short window (e.g. Friday 6pm to Saturday noon). The session can be used anytime that weekend, but the ability to buy the discount closes early. Creates a burst of purchase activity and commits people to showing up.</div>
+  </div>
+
+  <!-- GIVEAWAY -->
+  <div class="section-label">Free year giveaway — entry mechanic</div>
+  <div class="giveaway-box">
+    <div style="font-size:16px;font-weight:600;margin-bottom:4px;">Win a full year at Lore</div>
+    <div class="giveaway-meta">Announced this weekend · Runs all summer · One winner takes a full year membership</div>
+    <table class="data-table" style="border:none;">
+      <thead><tr><th>How to earn entries</th><th>Entries</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Purchase a session</td><td><span class="entry-badge">+1 per session</span></td><td>Applies to each session in a pack, not just the pack itself</td></tr>
+        <tr><td>Attend a session</td><td><span class="entry-badge">+1 per session</span></td><td>Separate from purchase — showing up counts independently</td></tr>
+        <tr><td>Bring a first-time guest</td><td><span class="entry-badge">+1 each</span></td><td>Both the referrer and the guest earn an entry</td></tr>
+        <tr><td>Leave a Google review</td><td><span class="entry-badge">+1</span></td><td>One-time; verified reviews only. Drives SEO and social proof as a side effect</td></tr>
+        <tr><td>Post to Instagram and tag Lore</td><td><span class="entry-badge">+1 per post</span></td><td>Public feed or story; capped at 5 posts to prevent spam</td></tr>
+        <tr><td>Refer someone who purchases</td><td><span class="entry-badge">+2</span></td><td>Referrer gets 2 entries when referred person completes a purchase</td></tr>
+        <tr><td>Upgrade to membership</td><td><span class="entry-badge">+3 bonus</span></td><td>One-time bonus on top of all ongoing purchase and attend entries</td></tr>
+        <tr><td>Sign up for email list</td><td><span class="entry-badge">+1</span></td><td>One-time for new subscribers only</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BULK PACKS -->
+  <div class="section-label">Bulk session packs — options to consider</div>
+  <table class="data-table">
+    <thead><tr><th>Pack</th><th>Price</th><th>Per session</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>5-pack</td><td><span class="price">$225</span></td><td class="price-note">$45.00 — 18% off</td><td><span class="tag tag-idea">Idea</span> &nbsp; Natural next step above the 3-pack</td></tr>
+      <tr><td>10-pack</td><td><span class="price">$400</span></td><td class="price-note">$40.00 — 27% off</td><td><span class="tag tag-idea">Idea</span> &nbsp; Commits regulars before membership makes sense</td></tr>
+      <tr><td>20-pack</td><td><span class="price">$700</span></td><td class="price-note">$35.00 — 36% off</td><td><span class="tag tag-idea">Idea</span> &nbsp; Near-membership economics with full flexibility</td></tr>
+      <tr><td>Summer 8-pack</td><td><span class="price">$320</span></td><td class="price-note">$40.00 — 27% off</td><td><span class="tag tag-idea">Idea</span> &nbsp; Seasonal framing; expires Sept 1</td></tr>
+      <tr><td>Founding member pack</td><td><span class="price">$500</span></td><td class="price-note">$33.33 — 15 sessions</td><td><span class="tag tag-idea">Idea</span> &nbsp; One-time early adopter offer with a loyalty angle</td></tr>
+      <tr><td>Corporate / gifting pack</td><td><span class="price">$350</span></td><td class="price-note">$35.00 — 10 sessions</td><td><span class="tag tag-idea">Idea</span> &nbsp; Shareable credits across a team or as a gift block</td></tr>
+      <tr><td>Reload reward pack</td><td><span class="price">$129</span></td><td class="price-note">$43.00 — 3 sessions</td><td><span class="tag tag-idea">Idea</span> &nbsp; Discounted 3-pack triggered automatically when credits hit zero</td></tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid #e0ded8;font-size:12px;color:#aaa;">
+    Lore Bathing Club &nbsp;·&nbsp; Internal use only &nbsp;·&nbsp; May 2026
+  </div>
+
+</div>
+</body>
+</html>
